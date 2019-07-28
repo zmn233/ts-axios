@@ -6,6 +6,8 @@ export type Method = 'get' | 'GET'
 | 'options' | 'OPTIONS'
 | 'patch' | 'PATCH'
 
+// 测试git新加的注释
+
 export interface AxiosRequestConfig {
   url: string
   params?: any
