@@ -1,12 +1,18 @@
-export type Method = 'get' | 'GET'
-| 'post' | 'POST'
-| 'head' | 'HEAD'
-| 'put' | 'PUT'
-| 'delete' | 'DELETE'
-| 'options' | 'OPTIONS'
-| 'patch' | 'PATCH'
-
-// 测试git新加的注释
+export type Method =
+  | 'get'
+  | 'GET'
+  | 'post'
+  | 'POST'
+  | 'head'
+  | 'HEAD'
+  | 'put'
+  | 'PUT'
+  | 'delete'
+  | 'DELETE'
+  | 'options'
+  | 'OPTIONS'
+  | 'patch'
+  | 'PATCH'
 
 export interface AxiosRequestConfig {
   url: string
@@ -14,4 +20,16 @@ export interface AxiosRequestConfig {
   data?: any
   headers?: any
   method?: Method
+  responseType: XMLHttpRequestResponseType
 }
+
+export interface AxiosResponse {
+  data: any
+  status: number
+  statusText: string
+  headers: any
+  config: AxiosRequestConfig
+  request: any
+}
+
+export interface AxiosPromise extends Promise<AxiosResponse> {}
